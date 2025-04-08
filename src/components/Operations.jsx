@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import {withdraw, deposit} from "../actions/accountActions.js";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
+import { deposit, withdraw } from '../features/accountSlice';
 
 const Operations = () => {
     const [sum, setSum] = useState(0);
@@ -10,7 +10,8 @@ const Operations = () => {
         <div className={'d-flex justify-content-center'}>
             <button
                 className={'btn btn-primary btn-lg'}
-                onClick={() => dispatch(withdraw(sum))}>Withdraw</button>
+                onClick={() => dispatch(withdraw(sum))}
+            >Withdraw</button>
             <input
                 className={'form-control-lg text-center'}
                 type="number"
@@ -19,7 +20,8 @@ const Operations = () => {
             />
             <button
                 className={'btn btn-primary btn-lg'}
-                onClick={() => dispatch(deposit(sum))}>Deposit</button>
+                onClick={() => dispatch(deposit(sum))}
+            >Deposit</button>
         </div>
     );
 };
